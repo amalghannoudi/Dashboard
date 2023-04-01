@@ -15,4 +15,26 @@ class UserController extends Controller
         $user->save(); 
         return $user;
     }
+    function login (Request $req){
+      $user=User::where('email',$req->email)->first();
+     if ( ! $user || !Hash::check($req->password,$user->password)){
+      return ['error'=>'password or email incorrecte'];
+     }
+      return $user;
+    }
+    public function getUser()
+    {
+       return User::all();
+
+    }
+    function deleteUser($id){
+      $result= User ::where('id',$id)->delete() ; 
+      if ($result){
+          return ["result"=>"deleted"];
+      }
+      else {
+          return ["result"=>"failed"];
+
+      }
+  }
 }

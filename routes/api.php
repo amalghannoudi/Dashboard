@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategorieController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,3 +22,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route ::post('addUser',[UserController::class,'addUser']);
+Route ::post('login',[UserController::class,'login']);
+Route ::post('addProduct',[ProductController::class,'addProduct']);
+Route ::post('addCategorie',[CategorieController::class,'addCategorie']);
+Route ::get('getProduct',[ProductController::class,'getProduct']);
+Route ::get('getUser',[UserController::class,'getUser']);
+Route ::get('getCategorie',[CategorieController::class,'getCategorie']);
+Route ::delete('deleteCat/{id}',[CategorieController::class,'deleteCat']);
+Route ::delete('deleteUser/{id}',[UserController::class,'deleteUser']);
+Route ::delete('deletePrd/{id}',[ProductController::class,'deletePrd']);
