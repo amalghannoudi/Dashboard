@@ -2,21 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './pages/Header/Header';
 import {BrowserRouter, Routes , Route} from "react-router-dom"
-import AddProducts from "./pages/AddProducts/addproducts";
+import Products from "./pages/Products/Products";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
-import UpdateProducts from "./pages/UpdateProducts/updateproducts";
-import DeleteProducts from "./pages/DeleteProducts/deleteproducts";
+import Users from "./pages/Users/Users";
+import Categories from "./pages/Categories/Categories";
+import Sidebar from './pages/Sidebar/Sidebar';
 function App() {
   return (
     <div className="App">
    <BrowserRouter>
-      <Header />
       <Routes>
       <Route path='/signUp' element={<SignUp />} />
-      <Route path='/add' element={<AddProducts />} />
-      <Route path='/update' element={<UpdateProducts />} />
-      <Route path='/delete' element={<DeleteProducts />} />
+      <Route path='/products' element={<Products />} />
+      <Route path='/categories' element={<Categories />} />
+      <Route path='/users' element={<Users />} />
+      <Route path='' element={<Login />} />
+      <Route path='/sidebar' element={<Sidebar />} />
 
     <Route path='/login' element={<Login />} />
     </Routes>
