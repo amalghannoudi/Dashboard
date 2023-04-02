@@ -35,4 +35,21 @@ class ProductController extends Controller
 
         }
     }
+    function getPrd($id){
+        return Product::find($id);
+    }
+    public function updatePrd(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->nom=$request->input('nom');
+        $product->price=$request->input('price');
+        $product->categorie_id=$request->input('categorie_id');
+        $product->save();
+    
+        return response()->json([
+            'success' => true,
+            'message' => 'product updated successfully.'
+        ]);
+    }
+
 }

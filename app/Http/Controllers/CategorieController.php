@@ -32,4 +32,20 @@ class CategorieController extends Controller
 
         }
     }
+    function getCat($id){
+        return Categorie::find($id);
+    }
+    public function updateCat(Request $request, $id)
+{
+    $category = Categorie::find($id);
+    $category->nom = $request->input('nom');
+    $category->description = $request->input('description');
+    $category->save();
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Category updated successfully.'
+    ]);
+}
+
 }

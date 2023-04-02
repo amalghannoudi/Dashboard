@@ -22,7 +22,7 @@ class UserController extends Controller
      }
       return $user;
     }
-    public function getUser()
+    public function getUsers()
     {
        return User::all();
 
@@ -37,4 +37,19 @@ class UserController extends Controller
 
       }
   }
+  function getUser($id){
+    return User::find($id);
+}
+public function updateUser(Request $request, $id)
+{
+    $User = User::find($id);
+    $User->name = $request->input('name');
+    $User->email = $request->input('email');
+    $User->save();
+
+    return response()->json([
+        'success' => true,
+        'message' => 'User updated successfully.'
+    ]);
+}
 }
