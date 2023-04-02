@@ -2,6 +2,7 @@ import React from 'react'
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import Header from '../Header/Header';
 const SignUp = () => {
     const navigate=useNavigate();
 
@@ -26,6 +27,8 @@ localStorage.setItem("user_info",JSON.stringify(result));
 navigate('/login');
 }
   return (
+    <div>
+      <Header />
     <div className="body">
 <div class="container right-panel-active">
 	<div class="container__form container--signup">
@@ -49,6 +52,7 @@ navigate('/login');
 		</div>
 	</div>
 </div>    </div>
+</div>
   )
 }
 
