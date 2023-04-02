@@ -3,7 +3,10 @@ import Sidebar from '../Sidebar/Sidebar'
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import AddCat from '../Modals/AddCat';
+<<<<<<< HEAD
 import UpdateCat from '../Modals/UpdateCat';
+=======
+>>>>>>> 2004bbc4683550f31360d05339c2b671a647333f
 const Categories = () => {
   const [searchText, setSearchText] = useState("");
 

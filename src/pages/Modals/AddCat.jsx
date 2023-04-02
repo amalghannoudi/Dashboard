@@ -31,6 +31,7 @@ const [items, setItems] = useState({});
     console.log(response.data);
     props.onAddSuccess();
 
+                handleClose();
 
   })
   .catch((error) => {
